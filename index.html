@@ -15,6 +15,7 @@
 <body>
 
     <script>
+        debugger;
         const initial_url = "exp://192.168.0.105:19000";
         const BASE_URL = 'http://104.238.110.135:8001/';
 
@@ -53,7 +54,7 @@
         } else {
             meta_img = 'http://104.238.110.135:8001/fetchImage?imageType=COMPANYLOGO&id=1';
         }
-        $('#meta_img, #meta_img_one').attr("src", meta_img);
+        $('#meta_img, #meta_img_one').attr("content", meta_img);
 
         let params = url.search;
         console.log(url);
