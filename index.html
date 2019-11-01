@@ -6,17 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:image" id="meta_img" content="">
-    <meta id="meta_img_one" content=""
-        itemprop="image">
+    <meta id="meta_img_one" content="" itemprop="image">
     <title>Beein</title>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- <a href="exp://192.168.1.108:19000">Try this</a>
-    <a href="beein://" id="beein">Beein</a>
-    <h3 id="url"></h3> -->
 
     <script>
         const initial_url = "exp://192.168.0.105:19000";
@@ -52,7 +48,11 @@
                 meta_img = `${IMG_OBJ.FETCH_COMPANY_PICTURE}${img_id}`;
                 break;
         }
+        if (meta_img) {
 
+        } else {
+            meta_img = 'http://104.238.110.135:8001/fetchImage?imageType=COMPANYLOGO&id=1';
+        }
         $('#meta_img, #meta_img_one').attr("src", meta_img);
 
         let params = url.search;
@@ -63,17 +63,6 @@
         $('#url').text(new_url);
         $('#beein').attr('href', new_url);
         window.location.href = new_url;
-
-        // $(document).ready(function () {
-        //     var url_string = window.location.href
-        //     var url = new URL(url_string);
-        //     let params = url.search;
-        //     console.log(url);
-        //     let new_url = initial_url + params;
-        //     $('#url').text(new_url);
-        //     $('#beein').attr('href', new_url);
-        //     window.location.href = new_url;
-        // });
 
         function getMobileOperatingSystem() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
